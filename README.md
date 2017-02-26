@@ -1,6 +1,4 @@
 # DjangoStaff
 
-This a web app using django framework.
-
-# DjangoApp
-# DjangoApp
+This a web app using django framework with sqlite.
+ 
