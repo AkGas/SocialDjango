@@ -1,0 +1,73 @@
+<!-- This is the contacts page html file -->
+
+{% extends 'home/page_head.html' %}
+
+{% block title %}
+Contacts
+{% endblock %}
+
+{% block body %}
+
+<div class="contacts-main-page">
+	<address>
+  		<strong>Enterprise X.</strong><br>
+  			Street Number Street name, city<br>
+  			city, postcode<br>
+  		<abbr title="Phone">P:</abbr> (123) 456-7890
+	</address>
+
+	<address>
+  		<strong>Full Name</strong><br>
+  		<a href="/cdn-cgi/l/email-protection#6d4e">first.last@example.com</a>
+	</address>
+
+	<div id='status'></div>
+	<div id='map'></div>
+
+</div>
+
+<script>
+
+	if (typeof navigator.geolocation == 'undefined')
+		alert("Geolocation not supported.")
+	else
+		navigator.geolocation.getCurrentPosition(granted, denied)
+
+function granted(position){
+
+	O('status').innerHTML = 'Permission Granted'
+	S('map').border = '1px solid black'
+	S('map').width = '640px'
+	S('map').height = '320px'
+
+	var lat = position.coords.latitude
+	var long = position.coords.longitude
+	var gmap = O('map')
+	var gopts = {
+			center: new google.maps.LatLng(lat, long),
+			zoom: 9,
+			mapTypeId: google.maps.pTypeId.ROADMAP
+	}
+	
+	var map = new google.maps.Map(gmap, gopts)
+}
+
+function denied(error){
+	
+	var message
+
+	switch(error.code){
+
+	case 1: message = 'Permission Denied'; break;
+	case 2: message = 'Position Unavailable,please check your internet connexion to have access to our Google maps location.'; break;
+	case 3: message = 'Operation Timed Out'; break;
+	case 4: message = 'Unknown Error'; break;
+}
+
+O('status').innerHTML = message
+}
+
+</script>
+
+
+{% endblock %}
