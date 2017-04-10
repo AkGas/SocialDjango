@@ -1,0 +1,118 @@
+<!-- This file will be reused, contains the menu bar -->
+<!DOCTYPE html >
+
+<html>
+<head>
+
+	<!-- metas -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+	<meta name="width" content="width=device-width initial-scale=1">
+
+	<script src='../../static/home/scripts/OSC.js'></script>
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script src="/home/akrem/Documents/Template/AppAngular2/src/assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/home/akrem/Documents/Template/AppAngular2/src/assets/bootstrap/js/bootstrap.js"></script>
+
+
+	<!-- title as will be shown for every page visited -->
+    <title>
+        {% block title %}
+            Home
+        {% endblock %}
+    </title>
+
+</head>
+<!--  include path to css file -->
+
+{% load staticfiles %}
+<!-- Costom css file must be included after the bootstrap otherwise it will be  overridden -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'home/styles/style.css' %}"/>
+
+
+<body>
+
+<nav class="navbar navbar-light" style="background-color: #FFFFFF;">
+
+	<div class="container-fluid">
+	<!-- header -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="{% url 'home:index' %}"> Home</a>
+		 </div>
+
+		<div class="collapse navbar-collapse" id="topNavBar">
+			<ul class="nav navbar-nav">
+				<li class="">
+					<a href=" {% url 'home:interest' %} ">
+						<span class="icon-filter" arial-hidden="true"></span>&nbsp;
+						Filter context
+					</a>
+
+				</li>
+
+				<li class="{% block gochat_active %}{% endblock %}">
+					<a href=" {% url 'home:gochat' %} ">
+						<span class="" arial-hidden="true"></span>&nbsp;
+						Go Chat
+					</a>
+				</li>
+
+			</ul>
+
+			<form class="navbar-form navbar-left text-muted" role="search" action="get" methos="">
+				<div class="form-group" >
+					<input type="text" class="form-control" name="q" value="">
+					<button type="submit" class="btn btn-round btn-default">
+						<span class="glyphicon glyphicon-search" aria-hidden="flase"></span>
+					</button>
+				</div>
+			</form>
+
+
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+            		<a class="dropdown-toggle"  data-toggle="dropdown" role="button" aria-haspopup="true">
+						<span class="caret" arial-hidden="true"></span>
+						<span class="glyphicon glyphicon-user-lock" arial-hidden=""></span>&nbsp;
+						Join Us
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href=" {% url 'home:sign' %} ">LogIn</a>
+						</li>
+						<li>
+							<a href=" {% url 'home:sign' %} ">SignUp</a>
+						</li>
+					</ul>
+        		</li>
+
+				<li class="{% block contacts_form %}{% endblock %}">
+           		 	<a href="{% url 'home:contacts' %}">
+						<span class="" arial-hidden="true"></span>&nbsp;
+						Contact Us
+					</a>
+				</li>
+
+			</ul>
+
+
+	</div>
+		</div>
+</nav>
+
+{% block body %}
+{% endblock %}
+
+
+<!-- Some javascript codes -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+
+</body>
+</html>

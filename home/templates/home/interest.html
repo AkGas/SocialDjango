@@ -1,0 +1,21 @@
+<!-- the tutos page -->
+
+{% extends 'home/page_head.html' %}
+
+{% block tutos_active %} active {% endblock %}
+
+{% block title %}
+Tutos
+{% endblock %}
+
+{% block body %}
+
+    <div class="interest-filter-form">
+        <h4>Filter context</h4>
+        <label>Enter key words of subjects you are interested in.</label> 
+        <br>
+        <input type="text" class="form-control" placeholder="filter content">
+        <button class="filter-interest-ok-button">Ok</button>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+<!-- the forum page -->
+
+{% extends 'home/page_head.html' %}
+
+{% block forum_active %} active {% endblock %}
+
+{% block title %}
+Forum
+{% endblock %}
+
+{% block body %}
+
+
+{% if all_users %}
+<div class="container forum-container">
+    <div class="row top forum-div">
+        <p><h3><strong>Our community:</strong></h3></p>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <ul>
+        {% for u in all_users %}
+        <li><a href="#"> this is a link for {{u.login}} </a></li>
+
+        {% endfor %}
+    </ul>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <h4>He is our top moderator ..../.</h4><br>
+                His main contributions: <br>
+                <br>
+                <ul>
+                    <li class="list-group-item"><h4>date jj/mm/aaaa</h4></li>
+                </ul>
+                <ul>
+                    <li class="list-group-item"><h4>date jj/mm/aaaa</h4></li>
+                </ul>
+                <ul>
+                    <li class="list-group-item"><h4>date jj/mm/aaaa</h4></li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    User Y
+                </h3>
+            </div>
+            <div class="panel-body">
+                He is our top asshole ..../.
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    User Z
+                </h3>
+            </div>
+            <div class="panel-body">
+                He is our top shit..../.
+            </div>
+        </div>
+{% else %}
+    <h1> No User found </h1>
+
+{% endif %}
+        <div class="well">
+            <p><h4>Here are our latest topic</h4></p>
+            <div class="panel-primary">
+                <div class="panel-heading">
+                <h3 class="panel-title">
+                    tOPIC 1
+                </h3>
+            </div>
+            <div class="panel-body">
+                iT IS HOW TO DEVELOP EMBEDDED C.
+            </div>
+            </div>
+        </div>
+
+        <div class="jumbotton">
+            <h2>Something to be declared here</h2>
+
+            <p>Ok, now am I doing something not so good or what???</p>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+{% endblock %}

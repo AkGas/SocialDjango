@@ -1,0 +1,72 @@
+  <!-- This is the home page html file -->
+
+  {% extends 'home/page_head.html' %}
+
+  {% block body %}
+
+  <div class="home-page">
+
+          <div class="home-page-header">  
+             <h3 class="header-h3"> Here will go the header </h3>  
+          </div>  
+     
+          <div id="mainHome">
+            <a id="link" title="a title to a link"> something</a>
+            <!-- every user's post -->
+              <div class="post">
+                <div class="post-content">
+
+                  <video width='400' height='320' controls>
+                    <source src='../../static/home/medias/vid.mp4' type='video/mp4'>
+                    <source src='medias/vid.webm' type='video/webm'>
+                    <source src='medias/vid.ogv' type='video/ogg'>
+                  </video>
+                  
+                  <h6>said:</h6></div>
+                <div class="user">
+                    <img src="../../static/home/images/img.png" width="50px">
+                  </div>
+              </div>
+          </div>
+
+  <div class="rightMenu"> 
+  		
+      <div id="sidebar-suggestions-header">
+          <strong> <a href="#link">Our Suggestions</a> </strong>
+      </div>
+  		
+      <div id="sidebar-suggestions-main-content">
+  			<strong> <a href="#"> link 1 </a> </strong>
+        <strong> <a href="#"> link 2 </a> </strong>
+  		</div>
+      
+  </div>
+      
+  <div class="home-page-footer"> 
+    
+    <table>
+      <tr>
+       	<td class="center"><address>
+  				<strong>Enterprise X.</strong><br>
+    					Street Number Street name, city<br>
+   					city, postcode<br>
+    					<abbr title="Phone">P:</abbr> (123) 456-7890
+  				</address>
+        </td>
+        
+        <td class="center">
+          <address>
+            <strong>Email</strong><br>
+              <a href="/cdn-cgi/l/email-protection#6d4e">username@domain</a>
+          </address>  
+        </td>
+  
+        <td> copyright (C) all right reserved,</td>
+      </tr>
+  </table>
+  
+  </div> 
+
+</div>
+
+  {% endblock %}

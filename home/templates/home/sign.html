@@ -1,0 +1,29 @@
+{% extends 'home/page_head.html' %}
+
+{% block title %}
+SignIn or SignUp
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <form>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 form-control-label">Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+      </div>
+
+      <button id="bid"> OK </button>
+  
+    </div>
+  </form>
+</div>
+
+{% endblock %}
